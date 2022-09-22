@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+	<title>Blank Page | AdminKit Demo</title>
+
+	<link href="css/app.css" rel="stylesheet">
+	<link href="css/tabs.css" rel="stylesheet">
+	<style type="text/css">
+		.wizard .nav-tabs > li {
+			width:16.6%;
+		}
+		.connecting-line {
+		    height: 2px;
+		    background: #e0e0e0;
+		    position: absolute;
+		    width: 81%;
+		    margin: 0 auto;
+		    left: 100px;
+		    right: 425px;
+		    top: 15px;
+		    z-index: 1;
+		}
+		.wizard .nav-tabs > li a i{
+			top: -20px;
+		}
+		.mydiv label{
+			font-weight: bold;
+		}
+		#step5{
+			overflow-y: scroll;
+			height: 350px;
+			overflow-x: hidden;
+		}
+		@media only screen and (max-width: 600px) {
+		#step5{
+		overflow-y: revert;
+		height: auto;
+		overflow-x: initial;
+		}
+	}
+		@media only screen and (max-width: 800px) {
+		#step5{
+		overflow-y: revert;
+		height: auto;
+		overflow-x: initial;
+		}
+	}
+
+	</style>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" href="index.html">
+					<img src="img/icons/s-logo.svg" alt="Logo">
+          			<span class="align-middle">SPASHTAM</span>
+        		</a>
+
+				<ul class="sidebar-nav">
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="index.html">
+              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+            </a>
+					</li>
+
+
+					<li class="sidebar-item">
+						<a href="#auth" data-toggle="collapse" class="sidebar-link collapsed">
+              				<i class="align-middle" data-feather="calendar"></i> <span class="align-middle">Attendance</span>
+            			</a>
+						<ul id="auth" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="course-period-attendance.html">Search</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="Student-Attendance.html">Add Attendance</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a href="#sel" data-toggle="collapse" class="sidebar-link collapsed">
+              				<i class="align-middle" data-feather="calendar"></i> <span class="align-middle"> Selection</span>
+            			</a>
+						<ul id="sel" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="assessment-questionnaire.html">Interviews</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="#">House Visits</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-header">
+						MASTERS
+					</li>
+					<li class="sidebar-item  active">
+						<a data-target="#ui" data-toggle="collapse" class="sidebar-link collapsed">
+              				<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Students</span>
+            			</a>
+						<ul id="ui" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item  active"><a class="sidebar-link" href="student-list.html">List</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="student-group.html">Groups</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item">
+						<a data-target="#forms" data-toggle="collapse" class="sidebar-link collapsed">
+              				<i class="align-middle" data-feather="user"></i> <span class="align-middle">Users</span>
+            			</a>
+						<ul id="forms" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="userlist.html">User Maintenance</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="user-rights.html">User Role maintenance</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="regions.html">
+              				<i class="align-middle" data-feather="globe"></i> <span class="align-middle">Regions</span>
+            			</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="workflow.html">
+              				<i class="align-middle" data-feather="list"></i> <span class="align-middle">Workflow</span>
+            			</a>
+					</li>
+					<li class="sidebar-item">
+						<a data-target="#ui3" data-toggle="collapse" class="sidebar-link collapsed">
+              				<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Institution</span>
+            			</a>
+						<ul id="ui3" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="institutions.html">List</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="institutions-group-list.html">Groups</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a data-target="#ui4" data-toggle="collapse" class="sidebar-link collapsed">
+              				<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Course</span>
+            			</a>
+						<ul id="ui4" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="course-list.html">List</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="course-group-list.html">Groups</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a data-target="#ui5" data-toggle="collapse" class="sidebar-link collapsed">
+              				<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Grade</span>
+            			</a>
+						<ul id="ui5" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="grade-list.html">List</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="grade-group-list.html">Groups</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a data-target="#ui6" data-toggle="collapse" class="sidebar-link collapsed">
+              				<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Grade Matrk</span>
+            			</a>
+						<ul id="ui6" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="grade-matrk-list.html">List</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="grade-matrk-group-list.html">Groups</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a data-target="#ui7" data-toggle="collapse" class="sidebar-link collapsed">
+              				<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Subject</span>
+            			</a>
+						<ul id="ui7" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="subject-list.html">List</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="subject-group.html">Groups</a></li>
+						</ul>
+					</li>
+			</div>
+		</nav>
+
+
+
+
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle d-flex">
+          <i class="hamburger align-self-center"></i>
+        </a>
+
+				<form class="d-none d-sm-inline-block">
+					<div class="input-group input-group-navbar">
+						<input type="text" class="form-control" placeholder="Search…" aria-label="Search">
+						<button class="btn" type="button">
+              <i class="align-middle" data-feather="search"></i>
+            </button>
+					</div>
+				</form>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-toggle="dropdown">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="bell"></i>
+									<span class="indicator">4</span>
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="alertsDropdown">
+								<div class="dropdown-menu-header">
+									4 New Notifications
+								</div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-danger" data-feather="alert-circle"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Update completed</div>
+												<div class="text-muted small mt-1">Restart server 12 to complete the update.</div>
+												<div class="text-muted small mt-1">30m ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-warning" data-feather="bell"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Lorem ipsum</div>
+												<div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate hendrerit et.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-primary" data-feather="home"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Login from 192.186.1.8</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-success" data-feather="user-plus"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">New connection</div>
+												<div class="text-muted small mt-1">Christina accepted your request.</div>
+												<div class="text-muted small mt-1">14h ago</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all notifications</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-none" href="#" id="messagesDropdown" data-toggle="dropdown">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="message-square"></i>
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="messagesDropdown">
+								<div class="dropdown-menu-header">
+									<div class="position-relative">
+										4 New Messages
+									</div>
+								</div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+											</div>
+											<div class="col-10 pl-2">
+												<div class="text-dark">Vanessa Tucker</div>
+												<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
+												<div class="text-muted small mt-1">15m ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="William Harris">
+											</div>
+											<div class="col-10 pl-2">
+												<div class="text-dark">William Harris</div>
+												<div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle" alt="Christina Mason">
+											</div>
+											<div class="col-10 pl-2">
+												<div class="text-dark">Christina Mason</div>
+												<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.</div>
+												<div class="text-muted small mt-1">4h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+											</div>
+											<div class="col-10 pl-2">
+												<div class="text-dark">Sharon Lessman</div>
+												<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all messages</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown">
+                <i class="align-middle" data-feather="settings"></i>
+              </a>
+
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
+                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded mr-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+              </a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle mr-1" data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="pie-chart"></i> Analytics</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="pages-settings.html"><i class="align-middle mr-1" data-feather="settings"></i> Settings & Privacy</a>
+								<a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="help-circle"></i> Help Center</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Log out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main class="content">
+				<div class="container-fluid p-0">
+						<section class="signup-step-container">
+								<div class="container">
+									<div class="row d-flex justify-content-center">
+										<div class="col-md-12">
+											<div class="wizard">
+												<div class="wizard-inner">
+													<div class="connecting-line"></div>
+													<ul class="nav nav-tabs" role="tablist">
+															 
+														<li role="presentation" class="active">
+															<a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" aria-expanded="true">
+																<span class="round-tab">1 </span> <i>Applicant &<br> Family Details</i></a>
+														</li>
+														<li role="presentation" class="disabled">
+															<a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" aria-expanded="false">
+																<span class="round-tab">2</span> <i>Family &<br>income details</i></a>
+														</li>
+														<li role="presentation" class="disabled">
+															<a href="#step3" data-toggle="tab" aria-controls="step3" role="tab">
+																<span class="round-tab">3</span> <i>Academic and<br> school information</i></a>
+														</li>
+														<li role="presentation" class="disabled">
+															<a href="#step4" data-toggle="tab" aria-controls="step4" role="tab">
+																<span class="round-tab">4</span> <i> Student Documents</i></a>
+														</li>
+														<li role="presentation" class="disabled">
+															<a href="#step6" data-toggle="tab" aria-controls="step6" role="tab">
+																<span class="round-tab">5</span> <i>Additional Details</i></a>
+														</li>
+														<li role="presentation" class="disabled">
+															<a href="#step5" data-toggle="tab" aria-controls="step5" role="tab">
+																<span class="round-tab">6</span> <i>Preview Page</i></a>
+														</li>
+														
+													</ul>
+												</div>
+								
+												<form role="form" action="index.html" class="login-box">
+														<div class="card">									
+																<div class="card-body">
+																	 
+													<div class="tab-content" id="main_form">
+														<div class="tab-pane active" role="tabpanel" id="step1">
+															<!-- <h4 class="text-center">Step 1</h4> -->
+							
+
+															<div class="form-2"	>
+																 
+																		<div class="row">
+																				<div class="col-md-4 col-sm-12">
+																					<label class="col-form-label">First Name *</label> 
+																					<input type="text" class="form-control mb-3" placeholder="">
+																				</div>
+																				<div class="col-md-4 col-sm-12">
+																					<label class="col-form-label">Middle Name</label> 
+																					<input type="text" class="form-control mb-3" placeholder="">
+																				</div>
+																				<div class="col-md-4 col-sm-12">
+																					<label class="col-form-label">Last Name *</label> 
+																					<input type="text" class="form-control mb-3" placeholder="">
+																				</div>
+																			</div>
+																			<div class="row">
+																			<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Gender</label>
+																			<div class="gender-Radio">
+																				<label class="form-check">
+																					<input name="radio-3" type="radio" class="form-check-input" checked="">
+																					<span class="form-check-label">Male</span>
+																				</label>
+																				<label class="form-check">
+																					<input name="radio-3" type="radio" class="form-check-input">
+																					<span class="form-check-label">Female</span>
+																				</label>
+																			</div>
+																			</div>
+																			<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Date of Birth *</label> 
+																			<input type="date" class="form-control mb-3" placeholder="">
+																			</div>
+
+																			<!-- <div class="col-md-4 col-sm-12">
+																					<label class="col-form-label">Upload Photographs </label> 
+																					<input type="file" class="form-control mb-3" placeholder="">
+																			</div> -->					
+<div class="col-md-4 col-sm-12">
+<label class="col-form-label">Special Family Condition</label> 
+<select class="form-control mb-3" style="appearance: auto;">
+<option selected="">Special Family Condition</option>
+<option>Applicant is an orphan</option>
+<option>Either or both of the applicatns parents are handicapped</option>
+<option>Either of the applicatns parents are deceased</option>
+<option>None</option>
+
+</select>
+</div>
+
+																			</div>
+																			<div class="row">
+																				<div class="col-md-12 col-sm-12">
+																					<label class="col-form-label">Residential Address </label> 
+																					<!-- <input type="text" class="form-control mb-3" placeholder=""> -->
+																					<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+																			</div>
+																			</div>
+																			<div class="row">
+																				<div class="col-md-4 col-sm-12">
+																						<label class="col-form-label">Nationality</label> 
+																						<input type="text" class="form-control mb-3" placeholder="">
+																				</div>
+																				<div class="col-md-4 col-sm-12">
+																						<label class="col-form-label">Aadhaar (Optional)</label> 
+																						<input type="number" class="form-control mb-3" placeholder="">
+																				</div>
+																				<div class="col-md-4 col-sm-12">
+																						<label class="col-form-label">Email Id </label> 
+																						<input type="email" class="form-control mb-3" placeholder="">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="col-md-4 col-sm-12">
+																						<label class="col-form-label">Mobile Number</label> 
+																						<input type="tel" class="form-control mb-3" placeholder="">
+																				</div>
+																				<div class="col-md-4 col-sm-12">
+																						<label class="col-form-label">Alternate Mobile Number</label> 
+																						<input type="tel" class="form-control mb-3" placeholder="">
+																				</div>
+																				<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Number Of Male Adults</label> 
+																		<input type="number" class="form-control mb-3" placeholder="">
+																		</div>
+																			</div>
+																</div>
+														
+															<div class="form-3"	>
+																<div class="row">
+																	<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Number Of Male Children</label> 
+																			<input type="number" class="form-control mb-3" placeholder="">
+																	</div>
+																	<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Number Of Female Adults</label> 
+																			<input type="number" class="form-control mb-3" placeholder="">
+																	</div>
+																	<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Number of Female Children</label> 
+																			<input type="number" class="form-control mb-3" placeholder="">
+																	</div>
+																	
+																	
+																</div>
+																<div class="row">
+																	 
+																	<!-- <div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Family members studying</label> 
+																		<input type="number" class="form-control mb-3" placeholder="">
+																	</div> -->
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Languages Known</label> 
+																		<input type="text" class="form-control mb-3" placeholder="">
+																	</div>
+																	<div class="col-md-4 col-sm-12 pt-4">
+																		<div class="gender-Radio">
+																				<label class="form-check">
+																					<input name="" type="checkbox" class="form-check-input" checked="">
+																					<span class="form-check-label">Read</span>
+																				</label>
+																				<label class="form-check">
+																					<input name="" type="checkbox" class="form-check-input">
+																					<span class="form-check-label">Write</span>
+																				</label>
+																				<label class="form-check">
+																					<input name="" type="checkbox" class="form-check-input">
+																					<span class="form-check-label">Speak</span>
+																				</label>
+																				<img src="img/icon+.png" style="height: 15px;width: 15px;">
+																			</div>
+																	</div>
+																</div>
+															</div>
+
+															<hr>
+															<div class="row">
+																	<div class="col-md-2 col-sm-12">
+																		<label class="col-form-label">English</label>
+																	</div>
+																	<div class="col-md-2 col-sm-12">
+																		<label class="col-form-label">Read,Write,Speak</label>
+																	</div>
+																	<div class="col-md-1 col-sm-12">
+																		<img src="img/icon-.png" style="height: 15px;width: 15px;">
+																	</div>
+																	<div class="col-md-2 col-sm-12"></div>
+																	
+																</div>
+
+																<div class="row">
+																	<div class="col-md-2 col-sm-12">
+																		<label class="col-form-label">Hindi</label>
+																	</div>
+																	<div class="col-md-2 col-sm-12">
+																		<label class="col-form-label">Read,Write,Speak</label>
+																	</div>
+																	<div class="col-md-1 col-sm-12">
+																		<img src="img/icon-.png" style="height: 15px;width: 15px;">
+																	</div>
+																	<div class="col-md-2 col-sm-12"></div>
+																	
+																</div>
+
+															<div class="row mt-3">
+																<div class="col-md-6 col-sm-12">
+																	<h5>* are mandatory fields in all steps</h5>
+																</div>
+																<div class="col-md-6 col-sm-12">
+																<ul class="list-inline pull-right">
+																	<li><button type="button" class="default-btn btn-primary  next-step">Continue to next step</button></li>
+																</ul>
+																</div>
+															</div>
+															 
+															
+														</div>
+
+                                                        <div class="tab-pane" role="tabpanel" id="step3">
+															<!-- <h4 class="text-center">Step 3</h4> -->
+															<div class="form-4"	>
+																
+
+																<div class="row">
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">
+																		Choose the Board/ University
+																	</label>
+																	<select class="form-control mb-3" style="appearance: auto;">
+																	<option>Select</option>
+																	<option>11th Standard / 1st Pre University / Intermediate 1st year</option> 
+																	<option>12th Standard / 2nd Pre University / Intermediate 2nd year</option>
+																	<option>1st year under graduation</option>
+																	<option>2nd year under graduation</option>
+																	<option>3rd year under graduation</option>
+																	</select>
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																	
+																	<label class="col-form-label">Current Specialization in study</label>
+																	<select class="form-control mb-3" style="appearance: auto;">
+																	<option>Select</option>
+																	<option>Maths, Physics, Chemistry</option> 
+																	<option>Biology, Physics, Chemistry</option>
+																	<option>Commerce, Economics, Civics</option>
+																	<option>Vocational</option>
+																	<option>Others</option>
+																	</select>
+																	
+																	</div>
+																	<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">
+																		Any achievements in school or otherwise
+																	</label>
+																	<select class="form-control mb-3" style="appearance: auto;">
+																	<option>Select</option>
+																	<option>Sports prize</option> 
+																	<option>School topper</option>
+																	<option>Class topper</option>
+																	<option>Class topper</option>
+																	</select>
+																	
+																	</div>
+																</div>
+
+												<div class="row">
+												<div class="col-md-4 col-sm-12">
+													<label class="col-form-label">
+														Institution/College  where Student is  currently studying?
+													</label>
+													<input type="text" class="form-control" placeholder="">												
+													</div>
+												</div>
+
+
+																	<div class="row">
+																	<div class="col-md-6 col-sm-12">
+																	<table class="table table-striped">
+																		<thead>
+																			<tr>
+																			<td colspan="3">Year 1</td>
+																			</tr>
+																			<!-- <tr>
+																			<td colspan="3">
+																			Board of Study?
+																			<input type="text" class="form-control" placeholder="">	
+																		</td>
+																			</tr> -->
+																			<!-- <tr>
+																			<td colspan="3">
+																			class of Study?
+																			<input type="text" class="form-control" placeholder="">	
+																		</td>
+																			</tr> -->
+																			<tr>
+																			<td colspan="3">
+														<label class="col-form-label">
+															Institution
+														</label>
+														<select class="form-control mb-3" style="appearance: auto;">
+														<option>Select</option>
+														</select>
+																			
+																		</td>
+																			</tr>
+
+																			<tr>
+																			<td colspan="3">
+														<label class="col-form-label">
+															Class
+														</label>
+														<select class="form-control mb-3" style="appearance: auto;">
+														<option>Select</option>
+														</select>
+																			
+																		</td>
+																			</tr>
+																			<tr>
+																			<td colspan="3">
+														<label class="col-form-label">
+															Course
+														</label>
+														<select class="form-control mb-3" style="appearance: auto;">
+														<option>Select</option>
+														</select>
+																			
+																		</td>
+																			</tr>
+
+
+																			<tr>
+																			<td >Public Exam</td>
+																			<td colspan="2">
+																			<div class="gender-Radio">
+																				<label class="form-check">
+																					<input name="yes2" type="radio" class="form-check-input" checked="">
+																					<span class="form-check-label">Yes</span>
+																				</label>
+																				<label class="form-check">
+																					<input name="yes2" type="radio" class="form-check-input">
+																					<span class="form-check-label">No</span>
+																				</label>
+																			</div>
+																			</td>
+																			</tr>
+																			<tr>
+																			<td class="col-md-8">Subject</td>
+																			<td >Score</td>
+																			</tr>
+																		</thead>
+																		<tr>
+																			<td >
+																				Subject 1
+  																			</td>
+																			
+																			<td >
+																				<input type="number" class="form-control" placeholder="">
+																			</td>
+																		</tr>
+																		<tr>
+																			<td >
+																				Subject 2
+  																			</td>
+																			
+																			<td >
+																				<input type="number" class="form-control" placeholder="">
+																			</td>
+																		</tr><tr>
+																			<td >
+																				Subject 3
+  																			</td>
+																		
+																			<td >
+																				<input type="number" class="form-control" placeholder="">
+																			</td>
+																		</tr><tr>
+																			<td >
+																				Subject 4
+  																			</td>
+																			
+																			<td >
+																				<input type="number" class="form-control" placeholder="">
+																			</td>
+																		</tr><tr>
+																			<td >
+																				Subject 5
+  																			</td>
+																			
+																			<td >
+																				<input type="number" class="form-control" placeholder="">
+																			</td>
+																		</tr><tr>
+																			<td >
+																				Subject 6
+  																			</td>
+																			
+																			<td >
+																				<input type="number" class="form-control" placeholder="">
+																			</td>
+																		</tr>
+																	</table>
+																	<div class="row">
+																		<div class="col-md-11 col-sm-12">
+																			
+																		</div>
+																		<div class="col-md-1 col-sm-12">
+																		<img src="img/icon+.png" style="height: 20px;width: 20px;">
+																	</div>
+																	</div>
+																		<br>
+																	</div>
+																	<div class="col-md-6 col-sm-12"></div>
+																	</div>
+																	<div class="row">
+																	<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">
+																		Distance travelled by the applicant to last attended school/College:
+																	</label>
+																	
+																	<input type="text" name="" class="form-control">
+																	</div>
+
+																	
+
+																	<div class="col-md-8 col-sm-12">
+																	<label class="col-form-label">
+																		Any other information the candidate or parents have provided during consideration of their<br> application
+																	</label>
+																	<input type="text" name="" class="form-control">
+																	</div>
+																
+																	</div>
+
+
+															</div>
+															 
+															 <div class="row">
+																<div class="col-md-6 col-sm-12">
+																	<h5>* are mandatory fields in all steps</h5>
+																</div>
+																<div class="col-md-6 col-sm-12">
+																<ul class="list-inline pull-right">
+																<li><button type="button" class="default-btn btn-secondary prev-step">Back</button></li>
+																<li><button type="button" class="default-btn btn-primary next-step">Continue</button></li>
+															</ul>
+																</div>
+															</div>
+															<!-- <ul class="list-inline pull-right">
+																<li><button type="button" class="default-btn btn-secondary prev-step">Back</button></li>
+																<li><button type="button" class="default-btn next-step skip-btn">Skip</button></li>
+																<li><button type="button" class="default-btn btn-primary next-step">Continue</button></li>
+															</ul> -->
+														</div>
+
+														<div class="tab-pane" role="tabpanel" id="step6">
+											<div class="row">
+																	<div class="col-md-6 col-sm-12">
+																		<label class="col-form-label">Application Number *</label> 
+																		<input type="text" class="form-control mb-3" placeholder="">
+																    </div>
+																	<div class="col-md-6 col-sm-12">
+																		<label class="col-form-label">Manual student Id?</label>
+																			<div class="gender-Radio">
+																				<label class="form-check">
+																					<input name="radio-11" type="radio" class="form-check-input" checked="">
+																					<span class="form-check-label">Yes</span>
+																				</label>
+																				<label class="form-check">
+																					<input name="radio-11" type="radio" class="form-check-input">
+																					<span class="form-check-label">No</span>
+																				</label>
+																			</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-6 col-sm-12">
+																			<label class="col-form-label">Enter Student Id</label> 
+																			<input type="text" class="form-control mb-3" placeholder="Enter Student Id (Mandatory for Manual)
+">
+																	</div>
+																	<div class="col-md-6 col-sm-12">
+																	<label class="col-form-label">Status</label> 
+																	<input type="text" class="form-control mb-3" placeholder="Status">
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Student Name As Per Bank Records</label> 
+																		<input type="text" class="form-control mb-3" placeholder="">
+																	</div>
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Name Of The Bank</label> 
+																		<input type="text" class="form-control mb-3" placeholder="">
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Name Of The Branch</label> 
+																		<input type="text" class="form-control mb-3" placeholder="">
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Bank IFSC code</label> 
+																		<input type="text" class="form-control mb-3" placeholder="">
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Student Account Number</label> 
+																		<input type="text" class="form-control mb-3" placeholder="">
+																	</div>
+
+																	
+																</div>
+
+<div class="row">
+<div class="col-md-4 col-sm-12">
+<label class="col-form-label"><i>Add new student group -&gt;</i></label>
+</div>
+
+<div class="col-md-4 col-sm-12">
+<!-- <img src="img/icon+.png" style="height: 15px;width: 15px;"> -->
+	<select class="form-control mb-3" style="appearance: auto;">
+	<option selected="">Add new student group</option>
+	<option>Swadha Andhra Pradesh students list</option>
+	<option>Swadha Andhra Pradesh students list</option>
+
+
+	</select>
+</div>
+<div class="col-md-4 col-sm-12"></div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-4 col-sm-12">
+		<label class="col-form-label">Swadha Andhra Pradesh students list</label>
+	</div>
+	<div class="col-md-1 col-sm-12">
+		<img src="img/icon-.png" style="height: 15px;width: 15px;">
+	</div>
+	<div class="col-md-7 col-sm-12"></div>
+	
+</div>
+<div class="row">
+	<div class="col-md-4 col-sm-12">
+		<label class="col-form-label">Swadha Karnataka students list</label>
+	</div>
+	<div class="col-md-1 col-sm-12">
+		<img src="img/icon-.png" style="height: 15px;width: 15px;">
+	</div>
+	<div class="col-md-7 col-sm-12"></div>
+	
+</div>
+<div class="row mt-4">
+	<div class="col-md-6 col-sm-12">
+		<h5>* are mandatory fields in all steps</h5>
+	</div>
+	<div class="col-md-6 col-sm-12">
+	<ul class="list-inline pull-right">
+	<li><button type="button" class="default-btn btn-secondary prev-step">Back</button></li>
+	<li><button type="button" class="default-btn btn-primary next-step">Continue</button></li>
+</ul>
+	</div>
+</div>
+
+														<!-- <ul class="list-inline pull-right">
+																<li><button type="button" class="default-btn btn-secondary prev-step">Back</button></li>
+																<li><button type="button" class="default-btn next-step skip-btn">Skip</button></li>
+																<li><button type="button" class="default-btn btn-primary next-step">Continue</button></li>
+															</ul> -->
+														</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+														<div class="tab-pane" role="tabpanel" id="step2">
+															<div class="row">
+																<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Name of Father *</label> 
+																	<br><br>
+																	<input type="text" class="form-control mb-3" placeholder="">
+																	</div>
+																<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Age of Father *</label> 
+																	<br><br>
+																	<input type="number" class="form-control mb-3" placeholder="">
+																	</div>
+																		<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Number  of applicants family attending school/college</label> 
+																		<select class="form-control mb-3" style="appearance: auto;">
+																		<option selected="">Number of children</option>
+																		<option>1</option>
+																		<option>2</option>
+																		<option>3</option>
+																		<option>4</option>
+																		<option>5</option>
+																		</select>
+																		</div>
+															</div>
+															<div class="row">
+																<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Name of Mother *</label>
+																	<br><br> 
+																	<input type="text" class="form-control mb-3" placeholder="">
+																	</div>
+																<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Age of Mother *</label> 
+																	<br><br>
+																	<input type="number" class="form-control mb-3" placeholder="">
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Mention qualification of any adult(s) who has/have had any formal education</label> 
+																	<input type="text" class="form-control mb-3" placeholder="">
+																	</div>
+																	
+																
+															</div>
+									
+																	<div class="row">
+																		<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Is the student receiving any other form of scholarship</label> 
+																			<div class="gender-Radio">
+																				<label class="form-check">
+																					<input name="radio-4" type="radio" class="form-check-input" checked="">
+																					<span class="form-check-label">Yes</span>
+																				</label>
+																				<label class="form-check">
+																					<input name="radio-4" type="radio" class="form-check-input">
+																					<span class="form-check-label">No</span>
+																				</label>
+																			</div>
+																		</div>
+
+																		<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Annual scholarship amount (Rupees) </label> 
+																			<br><br>
+																			<input type="number" class="form-control mb-3" placeholder="">
+																		</div>
+																		<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Name of organization providing scholarship  </label> 
+																			<br><br>
+																			<input type="text" class="form-control mb-3" placeholder="">
+																		</div>
+
+
+
+																	</div>
+																	<div class="row">
+																		<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Employment details of applicants family members</label> 
+																			<input type="text" class="form-control mb-3" placeholder="">
+																		</div>
+																		<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Does Family Owned Land? *</label>
+																		<br><br>
+																		<select class="form-control mb-3" style="appearance: auto;">
+																		<option selected="">Does Family Owned Land?</option>
+																		<option>Yes</option>
+																		<option>No</option>
+																		</select>
+																		</div>
+
+																	<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Unit Of Measurement</label> 
+																	<br><br>
+																	<select class="form-control mb-3" style="appearance: auto;">
+																	<option selected="">Unit Of Measurement </option>
+																	<option></option>
+																	</select>
+																	</div>
+																	</div>
+																<div class="row">
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Land Dimension </label> 
+																		<input type="number" class="form-control mb-3" placeholder="">
+																	</div>
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Value Of Land Property (Rupees)</label> 
+																		<input type="number" class="form-control mb-3" placeholder="">
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Does Family Owned House?*</label> 
+																	<select class="form-control mb-3" style="appearance: auto;">
+																	<option selected="">Does Family Owned House? </option>
+																	<option>Yes</option>
+																	<option>No</option>
+																	</select>
+																	</div>
+																</div>
+									
+																<div class="row">
+																	<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Unit Of Measurement </label> 
+																	<select class="form-control mb-3" style="appearance: auto;">
+																	<option selected="">Unit Of Measurement </option>
+																	<option></option>
+																	</select>
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">House Dimension </label> 
+																		<input type="number" class="form-control mb-3" placeholder="">
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Value Of House Property (Rupees)</label> 
+																		<input type="number" class="form-control mb-3" placeholder="">
+																	</div>
+
+																</div>
+															
+																<div class="row">
+																<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Consumer durables owned</label> 
+																		<input type="text" class="form-control mb-3" placeholder="">
+																	</div>
+
+
+																</div>
+																
+																														
+																
+															<div class="row">
+																<div class="col-md-6 col-sm-12">
+																	<h5>* are mandatory fields in all steps</h5>
+																</div>
+																<div class="col-md-6 col-sm-12">
+																<ul class="list-inline pull-right">
+																<li><button type="button" class="default-btn btn-secondary prev-step">Back</button></li>
+																<li><button type="button" class="default-btn btn-primary next-step">Continue</button></li>
+															</ul>
+																</div>
+															</div>
+
+															
+														</div>
+
+														<div class="tab-pane" role="tabpanel" id="step4">
+																<div class="row">
+															<div class="col-md-4 col-sm-12">
+															<label class="col-form-label">Upload Photographs </label> 
+															<input type="file" class="form-control mb-3" placeholder="">
+															</div>
+																	<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Document Type</label> 
+																	<select class="form-control mb-3" style="appearance: auto;">
+																	<option selected="">Document Type</option>
+																	</select>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-12">
+																	<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="file-upload">
+								<div class="image-upload-wrap">
+									<input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+									<div class="drag-text">
+										<h3>Drag and drop a file or select add Image</h3>
+									</div>
+								</div>
+								<div class="file-upload-content">
+									<img class="file-upload-image" src="#" alt="your image" />
+									<div class="image-title-wrap">
+										<button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+									</div>
+								</div>
+							<!-- <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button> -->
+							</div>
+						</div>
+					</div>
+				</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-3 col-sm-12">
+																		<label class="col-form-label"><i>Upload more documents  -></i></label>
+																	</div>
+
+																	<div class="col-md-1 col-sm-12">
+																		<img src="img/icon+.png" style="height: 15px;width: 15px;">
+																	</div>
+																	<div class="col-md-8 col-sm-12"></div>
+																</div>
+																	<hr>
+																<div class="row">
+																	<div class="col-md-2 col-sm-12">
+																		<label class="col-form-label">Photo Id</label>
+																	</div>
+																	<div class="col-md-2 col-sm-12">
+																		<label class="col-form-label">photoId.jpg       2MB</label>
+																	</div>
+																	<div class="col-md-1 col-sm-12">
+																		<img src="img/icon-.png" style="height: 15px;width: 15px;">
+																	</div>
+																	<div class="col-md-6 col-sm-12"></div>
+																</div>
+
+																<div class="row">
+																	<div class="col-md-2 col-sm-12">
+																		<label class="col-form-label">Marksheet-10th</label>
+																	</div>
+																	<div class="col-md-2 col-sm-12">
+																		<label class="col-form-label">marksXth.pdf    1MB</label>
+																	</div>
+																	<div class="col-md-1 col-sm-12">
+																		<img src="img/icon-.png" style="height: 15px;width: 15px;">
+																	</div>
+																	<div class="col-md-2 col-sm-12"></div>
+																	
+																</div>
+
+																<div class="row mt-4">
+																<div class="col-md-6 col-sm-12">
+																	<h5>* are mandatory fields in all steps</h5>
+																</div>
+																<div class="col-md-6 col-sm-12">
+																<ul class="list-inline pull-right">
+																<li><button type="button" class="default-btn btn-secondary prev-step">Back</button></li>
+																<li><button type="button" class="default-btn btn-primary next-step">Continue</button></li>
+															</ul>
+																</div>
+															</div>
+
+															<!-- <ul class="list-inline pull-right">
+																<li><button type="button" class="default-btn btn-secondary prev-step">Back</button></li>
+																<li><button type="button" class="default-btn btn-primary next-step">Continue</button></li>
+															</ul> -->
+														</div>
+
+														<div class="tab-pane" role="tabpanel" id="step5" class="mydiv">
+															<div class="container-fluid p-0">
+							
+						</div>
+
+						<div class="col-md-12 col-xl-12">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Original Document
+</button><br><br>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Original Document</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <p>Photo Id:</p>
+        <img src="img/Khadhar-Basha2.jpeg">
+        <p>Marksheet-10th</p>
+        <img class="w-100" src="img/main-qimg-07074c22559450133dd3103d2748f85b.jpg">
+
+      </div>
+    </div>
+  </div>
+</div>
+								<div class="container user-profile">
+												<div class="application-sumary mydiv">
+													<h2>Applicant & Family Details</h2>
+																
+
+																<div class="row">
+																				<div class="col-md-4 col-sm-12">
+																					<label class="col-form-label">First Name *</label> 
+																					<span>Kavita</span>
+																				</div>
+																				<div class="col-md-4 col-sm-12">
+																					<label class="col-form-label">Middle Name*</label> 
+																				</div>
+																				<div class="col-md-4 col-sm-12">
+																					<label class="col-form-label">Last Name *</label> 
+																					<span>k</span>
+																				</div>
+																			</div>
+																			<div class="row mydiv">
+																			<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Gender</label> 
+																			<span>Male</span>
+																			</div>
+																			<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Date of Birth </label> 
+																			<span>17/10/1992</span>
+																			</div>
+																			<div class="col-md-4 col-sm-12">
+																					<label class="col-form-label">Place Of Birth (Optional)</label> 
+																					<span>Kolkata</span>
+																			</div>
+																			</div>
+																			
+
+																								
+																			</div>
+																			<div class="row mydiv mb-3">
+																				<div class="col-md-4 col-sm-12">
+																						<label class="col-form-label">Nationality </label> <br>
+																						<span>Indian</span>
+																				</div>
+																				<div class="col-md-4 col-sm-12">
+																						<label class="col-form-label">Aadhaar</label> 
+																						
+																				</div>
+																				<div class="col-md-4 col-sm-12">
+																						<label class="col-form-label">Email Id </label><br><span>info@w3webhelp.com</span>
+																				</div>
+																			</div>
+																			<div class="row mydiv mb-3">
+																				<div class="col-md-4 col-sm-12">
+																						<label class="col-form-label">Mobile Number</label> <br>
+																						<span>9876543210</span>
+																				</div>
+																				<div class="col-md-4 col-sm-12">
+																						<label class="col-form-label">Alternate Mobile Number </label> 
+																						
+																				</div>
+																				<div class="col-md-4 col-sm-12"></div>
+																			</div>
+																			<div class="row mydiv mb-3">
+																	<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Number Of Male Adults</label><br> <span>6</span>
+																	</div>
+																	<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Number Of Female Adults</label> <br>
+																			<span>4</span>
+																	</div>
+																	<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Number Of Male Children</label> <br>
+																			<span>2</span>
+																	</div>
+																</div>
+																<div class="row mydiv mb-3">
+																	<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Special Family Condition</label> 
+																	<span>Applicant is an orphan</span>
+
+																	</select>
+																	</div> 
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Family members studying</label> <br>
+																		<span>3</span>
+																	</div>
+																	<div class="col-md-4 col-sm-12"></div>
+																</div>
+																<h2>Family Income details</h2>
+															<div class="row mydiv mb-3">
+																<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Name of Father *</label> 
+																</div>
+																<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Age of Father *</label> 
+																</div>
+															</div>
+															<div class="row mydiv mb-3">
+																<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Name of Mother *</label> 
+																</div>
+																<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Age of Mother *</label> 
+																</div>
+																
+															</div>
+															<div class="row mydiv mb-3">
+																<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Is the student receiving any other form of scholarship</label> 
+																</div>
+
+																<div class="col-md-4 col-sm-12">
+																<label class="col-form-label">Annual scholarship amount </label>
+																</div>
+																<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Name of organization providing scholarship  </label> 
+																</div>
+															</div>
+															<div class="row mydiv mb-3">
+																		<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Number of children in applicants family attending school </label> 
+																		</div>
+
+																		<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Employment details of applicants family members</label> 
+																		</div>
+																		<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Mention qualification of any adult(s) who has/have had any formal education</label> 
+																		</div>
+																	</div>
+															<div class="row mydiv mb-3">
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Family Own Land? *</label>
+																		</div>
+
+																		<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Unit Of Measurement</label>
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Land Dimension </label> 
+																	</div>
+																</div>
+									
+																<div class="row mydiv mb-3">
+																	
+																	
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Value Of Land Property </label> 
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Family Own House?*</label> 
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																	<label class="col-form-label">Unit Of Measurement </label>
+																	</div>
+
+																</div>
+															
+																<div class="row mydiv mb-3">
+																
+
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">House Dimension </label> 
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Value Of House Property </label> 
+																	</div>
+
+																		<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Consumer durables owned</label> 
+																	</div>
+
+
+																</div>
+																
+																														
+																<div class="row mydiv mb-3">
+																																
+																
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Remarks</label>
+																	</div>
+																</div>
+															
+																	
+																</div>
+															
+																<h2 class="pt-3">Academic and school information</h2>
+                                                                 <div class="row mydiv">
+																	<div class="col-12">
+																		<label class="col-form-label">
+																		Choose Present class of the study
+																	</label><br>
+																	<!-- <label class="col-form-label">Tick anyone of the following</label> -->
+																	<p>
+   																		<span>12th Standard / 2nd Pre University / Intermediate 2nd year</span><br>
+   																		 
+ 																	</p>
+																	</div>
+																</div>
+																<div class="row mydiv">
+																	<div class="col-12">
+																	
+																	<label class="col-form-label">Current Specialization in study</label><br>
+																	
+   																		 <p>
+   																		 	 <span>Maths, Physics, Chemistry</span><br>
+   																		 </p> 
+ 																	
+																	</div>
+																	</div>
+																	<div class="row mydiv">
+																	<div class="col-12">
+																	<label class="col-form-label">
+																		Any achievements in school or otherwise (BENENC4) 
+																	</label><br>
+																	<!-- <label class="col-form-label">Tick anyone of the following</label><br> -->
+																	<p>
+																		 <span>School topper</span>
+   																		 
+																	</p>
+ 																	
+																	</div>
+																	<div class="row mydiv">
+																		<div class="col-6">
+																			<table class="table table-striped">
+																		<thead>
+																			<tr>
+																			<td colspan="3">Year 1</td>
+																			</tr>
+																			<tr>
+																			<td>Public Exam</td>
+																			<td colspan="2">
+																			<div>yes</div>
+																			</td>
+																			</tr>
+																			<tr>
+																			<td>Subject</td>
+																			<!-- <td>Name</td> -->
+																			<td>Score</td>
+																			</tr>
+																		</thead>
+																		<tbody><tr>
+																			<td>
+																				social-science
+																			</td>
+																			<td>
+																				<div>95</div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>
+																				kannada 
+																			</td>
+																			<td>
+																				<div>121</div>
+																			</td>
+																		</tr><tr>
+																			<td>
+																				English
+																			</td>
+																			<td>
+																				<div>85</div>
+																			</td>
+																		</tr><tr>
+																			<td>
+																				Hindi 
+																			</td>
+																			<td>
+																				<div> 86</div>
+																			</td>
+																		</tr><tr>
+																			<td>
+																				Mathematics  
+																			</td>
+																			<td>
+																				<div> 73</div>
+																			</td>
+																		</tr><tr>
+																			<td>
+																				science  
+																			</td>
+																			<td>
+																				<div> 83</div>
+																			</td>
+																		</tr>
+																	</tbody></table>
+																	</div>
+																	<div class="col-6">
+																		
+																	</div>
+																	</div>
+
+																	</div>
+																	<h2 class="pt-3">Additional Details</h2>
+																	<div class="row mydiv mb-3">
+																		<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Application Number :</label> <br>
+																			<span>12345</span>
+																	    </div>
+																		<div class="col-md-4 col-sm-12">
+																			<label class="col-form-label">Manual student Id :</label><br>
+																				<span>STUREG</span>
+																		</div>
+																		<div class="col-md-4 col-sm-12">
+																				<label class="col-form-label">Student Id :</label> <br>
+																				<span>56789</span>
+
+																		</div>
+																		<div class="col-12">
+																			<label class="col-form-label">Status :</label> <br>
+																			<span>Student</span>
+																	    </div>
+																	</div>
+																		<div class="row mydiv mb-3">
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Student Name As Per Bank Records</label> 
+																		
+																	</div>
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Name Of The Bank</label> 
+																		
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Name Of The Branch</label> 
+																		
+																	</div>
+																	
+																</div>
+																	<div class="row mydiv mb-3">
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Bank IFSC code</label> 
+																		
+																	</div>
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Student Account Number</label> 
+																		
+																	</div>
+
+																	<div class="col-md-4 col-sm-12">
+																		<label class="col-form-label">Additional Details Type</label> 
+																		
+																	</div>
+																	
+																</div>
+
+																	<h2 class="pt-3">Student Documents</h2>
+
+																	<div class="row mydiv">
+																	<div class="col-md-2 col-sm-12">
+																		<label class="col-form-label">Photo Id</label>
+																	</div>
+																	<div class="col-md-2 col-sm-12">
+																		<img src="img/Untitled-1.jpg">
+																	</div>
+																	<div class="col-md-3 col-sm-12">
+																		<label class="col-form-label">photoId.jpg       2MB</label>
+																	</div>
+																	
+																	<div class="col-md-2 col-sm-12"></div>	
+																	</div>
+
+																	<div class="row mydiv mt-2">
+																	<div class="col-md-2 col-sm-12">
+																		<label class="col-form-label">Marksheet-10th</label>
+																	</div>
+																	<div class="col-md-2 col-sm-12">
+																		<img src="img/Untitled-12.jpg">
+																	</div>
+																	<div class="col-md-3 col-sm-12">
+																		<label class="col-form-label">marksXth.pdf    1MB</label>
+																	</div>								
+																	<div class="col-md-7 col-sm-12"></div>
+																	
+																</div>
+																<ul class="list-inline pull-right">
+																<li><button type="button" class="default-btn btn-secondary prev-step">Edit</button></li>
+																<li><button type="Submit" class="default-btn btn-primary next-step">Submit</button></li>
+															</ul>
+                                                         <!-- 
+                                                         <div class="tab-pane" role="tabpanel" id="step11">
+                                                         	<div class="row text-center">
+																	<div class="col-12 text-center" >
+																		<img src="img/1.png"><br>
+																	<label class="col-form-label"><i>Success</i></label>
+																	</div>
+																<div class="row">
+																	<div class="col-12 text-center">
+																	<label class="col-form-label">Application Id : 1223233</label>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-12 text-center">
+																	<label class="col-form-label">Internal Student Id : 2020001234</label>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-12 text-center">
+																	<label class="col-form-label"><i>Student record is added and pending for approval</i></label>
+																	</div>
+																	
+																</div>
+															
+
+															<ul class="list-inline pull-right">
+																
+																<li><button type="button" class="default-btn btn-primary next-step">Close</button></li>
+															</ul>
+														</div> -->
+														<div class="clearfix"></div>
+													</div>
+													
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+									</div>
+								</div>
+							</section>
+
+					<!-- <h1 class="h3 mb-3">Add new Student</h1>
+					<ul class="stepbar">
+					 
+					</ul>
+					 
+					<div class="col-lg-12">
+						<div class="text-right">
+							<button class="btn btn-secondary btn-lg">Cancel</button>
+							<button class="btn btn-primary btn-lg">Submit</button>
+						</div>
+					</div> -->
+				</div>
+			</main>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-left">
+							<p class="mb-0">
+								<a href="index.html" class="text-muted"><strong>AdminKit Demo</strong></a> &copy;
+							</p>
+						</div>
+						<div class="col-6 text-right">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Help Center</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Terms</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+
+
+
+	<script src="js/jquery3.4.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<script src="js/app.js"></script>
+<script>
+$(document).ready(function () {
+    $('.nav-tabs > li a[title]').tooltip();
+    
+    //Wizard
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+
+        var target = $(e.target);
+    
+        if (target.parent().hasClass('disabled')) {
+            return false;
+        }
+    });
+
+    $(".next-step").click(function (e) {
+
+        var active = $('.wizard .nav-tabs li.active');
+        active.next().removeClass('disabled');
+        nextTab(active);
+
+    });
+    $(".prev-step").click(function (e) {
+
+        var active = $('.wizard .nav-tabs li.active');
+        prevTab(active);
+
+    });
+});
+
+function nextTab(elem) {
+    $(elem).next().find('a[data-toggle="tab"]').click();
+}
+function prevTab(elem) {
+    $(elem).prev().find('a[data-toggle="tab"]').click();
+}
+
+
+$('.nav-tabs').on('click', 'li', function() {
+    $('.nav-tabs li.active').removeClass('active');
+    $(this).addClass('active');
+});
+
+
+
+</script>
+
+
+</body>
+<script src="js/app.js"></script>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+			<h2 class="modal-title" id="exampleModalLongTitle">Bulk Upload</h2>
+				<i class="fa fa-times" data-dismiss="modal" aria-label="Close"></i>
+			</div>
+				<div class="modal-body">
+					<div class="file-upload">
+						<div class="image-upload-wrap">
+						  <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+						  <div class="drag-text">
+							<h3>Drag and drop a file or select add Image</h3>
+						  </div>
+						</div>
+						<div class="file-upload-content">
+						  <img class="file-upload-image" src="#" alt="your image" />
+						  <div class="image-title-wrap">
+							<button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+						  </div>
+						</div>
+						<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button>
+					</div>
+				</div>
+			</div>
+		</div>
+  	</div>
+</html>

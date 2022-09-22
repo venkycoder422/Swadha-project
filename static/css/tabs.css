@@ -1,0 +1,117 @@
+.user-profile .nav-tabs li a {
+    color: #343a40;
+    padding: .75rem 1rem;
+    border: 0;
+    display: block;
+    border-top-left-radius: .2rem;
+    border-top-right-radius: .2rem;
+    background-color: #f7f7fc;
+}
+.user-profile .nav-tabs li a:hover {
+    text-decoration: none;
+}
+.user-profile .nav-tabs a.active {
+    background: #fff;
+    color: #343a40;
+}
+.user-profile .nav-tabs {
+    border: none;
+}
+.user-profile  .tab-content {
+    background: #fff;
+    padding: 1.25rem;
+    box-shadow: 0 0.1rem 0.2rem rgba(0,0,0,.05);
+    border-radius: 0 0 .2rem .2rem;
+}
+@media (min-width: 768px) {
+    .panel-heading {
+        display: none;
+    }
+    .panel {
+        border: none;
+        box-shadow: none;
+    }
+    .panel-collapse {
+        height: auto;
+    }
+    .panel-collapse.collapse {
+        display: block;
+    }
+}
+@media (max-width: 767px) {
+    .tab-content .tab-pane {
+        display: block;
+    }
+    .nav-tabs {
+        display: none;
+    }
+    .panel-title a {
+        display: block;
+        font-size: 14px;
+        color: #343a40;
+        padding: .3rem 0;
+    }
+    .panel {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: -2px;
+    }
+    .tab-pane:first-child .panel {
+        border-radius: 5px 5px 0 0;
+    }
+    .tab-pane:last-child .panel {
+        border-radius: 0 0 5px 5px;
+    }
+}
+
+.stepbar {
+    counter-reset: step;
+    padding: 0;
+  }
+  .stepbar li {
+    list-style: none;
+    display: inline-block;
+    width: 23%;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+  }
+  .stepbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 30px;
+    height: 30px;
+    line-height : 30px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    background-color: #fff;
+    z-index: 1;
+    position: relative;
+  }
+  .stepbar li:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    top: 15px;
+    left: -50%;
+  }
+  .stepbar li:first-child:after {
+    content: none;
+  }
+  .stepbar li.active {
+    color: #3b7ddd;
+  }
+  .stepbar li.active:before {
+    border-color: #3b7ddd;
+    background-color: #3b7ddd;
+    color: #fff;
+  } 
+  .stepbar li.active + li:after {
+    background-color: #3b7ddd;
+  }
